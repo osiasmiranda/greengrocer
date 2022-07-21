@@ -8,6 +8,7 @@ class BaseScreen extends StatefulWidget {
 }
 
 int currentTabIndex = 0;
+final pageController = PageController();
 
 class _BaseScreenState extends State<BaseScreen> {
   @override
@@ -41,14 +42,28 @@ class _BaseScreenState extends State<BaseScreen> {
       items: kBottomNavBarItems,
       type: BottomNavigationBarType.fixed,
       currentIndex: currentTabIndex,
+      backgroundColor: Colors.green,
+      selectedItemColor: Colors.white,
+      unselectedItemColor: Colors.white.withAlpha(100),
       onTap: (int index) {
         setState(() {
           currentTabIndex = index;
+          pageController.jumpToPage(index);
         });
       },
     );
     return Scaffold(
-      body: kTabPages[currentTabIndex],
+      body: PageView(
+        controller: pageController,
+        physics: const NeverScrollableScrollPhysics(),
+        children: [
+          Container(color: Colors.red),
+          Container(color: Colors.blue),
+          Container(color: Colors.orange),
+          Container(color: Colors.purple),
+          // kTabPages[currentTabIndex],
+        ],
+      ),
       bottomNavigationBar: bottomNavBar,
     );
   }
