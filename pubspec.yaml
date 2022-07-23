@@ -24,8 +24,8 @@ dev_dependencies:
 flutter:
 
   uses-material-design: true
-   assets:
-     - assets/fruits/
+  assets:
+    - assets/fruits/
   #   - images/a_dot_ham.jpeg
   # example:
   # fonts:

@@ -1,7 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:greengrocer/src/config/app_data.dart' as app_data;
 import 'package:greengrocer/src/config/custom_colors.dart';
-
 import 'components/category_title.dart';
 
 class HomeTab extends StatefulWidget {
@@ -12,20 +12,12 @@ class HomeTab extends StatefulWidget {
 }
 
 class _HomeTabState extends State<HomeTab> {
-  final List<String> categories = [
-    'Frutas',
-    'Grãos',
-    'Verduras',
-    'Temperos',
-    'Cereais',
-  ];
-
   late String selectedCategory = 'Frutas';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      //AppBar
+      //!AppBar
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
@@ -78,7 +70,7 @@ class _HomeTabState extends State<HomeTab> {
 
       body: Column(
         children: [
-          //Campo de Pesquisa
+          //!Campo de Pesquisa
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
             child: TextFormField(
@@ -107,7 +99,7 @@ class _HomeTabState extends State<HomeTab> {
             ),
           ),
 
-          //Categorias
+          //!Categorias
           Container(
             padding: const EdgeInsets.only(left: 25.0),
             height: 40,
@@ -115,22 +107,40 @@ class _HomeTabState extends State<HomeTab> {
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) {
                 return CategoryTitle(
-                  category: categories[index],
-                  isSelected: categories[index] == selectedCategory,
+                  category: app_data.categories[index],
+                  isSelected: app_data.categories[index] == selectedCategory,
                   onPressed: () {
                     setState(() {
-                      selectedCategory = categories[index];
+                      selectedCategory = app_data.categories[index];
                     });
                   },
                 );
               },
               separatorBuilder: (_, index) => const SizedBox(width: 10),
-              itemCount: categories.length,
+              itemCount: app_data.categories.length,
+            ),
+          ),
+          //!grid
+          Expanded(
+            child: GridView.builder(
+              padding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+              physics: const BouncingScrollPhysics(),
+              gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
+                childAspectRatio: 9 / 11.5,
+              ),
+              itemCount: app_data.items.length,
+              itemBuilder: (_, index) {
+                return Container(
+                  color: Colors.red,
+                );
+              },
             ),
           ),
         ],
       ),
-      //grid
     );
   }
 }
