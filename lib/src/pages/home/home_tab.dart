@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:greengrocer/src/config/app_data.dart' as app_data;
 import 'package:greengrocer/src/config/custom_colors.dart';
 import 'components/category_title.dart';
+import 'components/item_title.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -133,8 +134,8 @@ class _HomeTabState extends State<HomeTab> {
               ),
               itemCount: app_data.items.length,
               itemBuilder: (_, index) {
-                return Container(
-                  color: Colors.red,
+                return ItemTitle(
+                  item: app_data.items[index],
                 );
               },
             ),
