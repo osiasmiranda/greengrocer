@@ -43,7 +43,10 @@ class ItemTitle extends StatelessWidget {
                 children: [
                   //#imagens
                   Expanded(
-                    child: Image.asset(item.imgUrl),
+                    child: Hero(
+                      tag: item.imgUrl,
+                      child: Image.asset(item.imgUrl),
+                    ),
                   ),
                   //#nome
                   Text(
