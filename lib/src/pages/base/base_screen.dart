@@ -55,7 +55,7 @@ class _BaseScreenState extends State<BaseScreen> {
         physics: const NeverScrollableScrollPhysics(),
         children: [
           const HomeTab(),
-          CartTab(),
+          const CartTab(),
           Container(color: Colors.orange),
           Container(color: Colors.purple),
           // kTabPages[currentTabIndex],
