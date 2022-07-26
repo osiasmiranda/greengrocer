@@ -24,6 +24,7 @@ class _CartTabState extends State<CartTab> {
 
   double cartTotalPrice() {
     double total = 0;
+
     for (var item in app_data.cartItems) {
       total += item.totalPrice();
     }
@@ -41,6 +42,7 @@ class _CartTabState extends State<CartTab> {
         children: [
           Expanded(
             child: ListView.builder(
+              physics: const BouncingScrollPhysics(),
               itemCount: app_data.cartItems.length,
               itemBuilder: (_, index) {
                 return CartTitle(

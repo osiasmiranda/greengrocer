@@ -1,5 +1,6 @@
 import '../model/cart_item_model.dart';
 import '../model/item_model.dart';
+import '../model/user_model.dart';
 
 ItemModel apple = ItemModel(
   description:
@@ -90,4 +91,28 @@ List<CartItemModel> cartItems = [
     item: kiwi,
     quantity: 1,
   ),
+  CartItemModel(
+    item: mango,
+    quantity: 1,
+  ),
+  CartItemModel(
+    item: guava,
+    quantity: 1,
+  ),
+  CartItemModel(
+    item: kiwi,
+    quantity: 1,
+  ),
+  CartItemModel(
+    item: kiwi,
+    quantity: 1,
+  ),
 ];
+
+UserModel userModel = UserModel(
+  email: 'osiasmiranda@gmail.com',
+  name: 'Osias Miranda',
+  phone: '(92) 99182-9438',
+  cpf: '123.456.789-00',
+  password: '',
+);
