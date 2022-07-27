@@ -56,15 +56,16 @@ class _ProductScreenState extends State<ProductScreen> {
                     children: [
                       //#Nome - Quantidade
                       Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          Text(
-                            widget.item.itemName,
-                            maxLines: 2,
-                            overflow: TextOverflow.ellipsis,
-                            style: const TextStyle(
-                              fontSize: 27,
-                              fontWeight: FontWeight.bold,
+                          Expanded(
+                            child: Text(
+                              widget.item.itemName,
+                              maxLines: 2,
+                              overflow: TextOverflow.ellipsis,
+                              style: const TextStyle(
+                                fontSize: 25,
+                                fontWeight: FontWeight.bold,
+                              ),
                             ),
                           ),
                           QuantityWidget(

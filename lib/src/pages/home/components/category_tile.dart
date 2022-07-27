@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../../config/custom_colors.dart';
 
-class CategoryTitle extends StatelessWidget {
-  const CategoryTitle({
+class CategoryTile extends StatelessWidget {
+  const CategoryTile({
     Key? key,
     required this.category,
     required this.isSelected,

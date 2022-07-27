@@ -5,20 +5,20 @@ import '../../../config/custom_colors.dart';
 import '../../../model/cart_item_model.dart';
 import '../../../services/utils_services.dart';
 
-class CartTitle extends StatefulWidget {
+class CartTile extends StatefulWidget {
   final CartItemModel cartItem;
   final Function(CartItemModel) remove;
-  const CartTitle({
+  const CartTile({
     Key? key,
     required this.cartItem,
     required this.remove,
   }) : super(key: key);
 
   @override
-  State<CartTitle> createState() => _CartTitleState();
+  State<CartTile> createState() => _CartTileState();
 }
 
-class _CartTitleState extends State<CartTitle> {
+class _CartTileState extends State<CartTile> {
   final UtilsServices utilsServices = UtilsServices();
 
   @override

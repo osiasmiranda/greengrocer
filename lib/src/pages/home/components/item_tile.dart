@@ -5,11 +5,11 @@ import 'package:greengrocer/src/model/item_model.dart';
 import '../../../services/utils_services.dart';
 import '../../product/product_screen.dart';
 
-class ItemTitle extends StatelessWidget {
+class ItemTile extends StatelessWidget {
   final ItemModel item;
   final UtilsServices utilsServices = UtilsServices();
 
-  ItemTitle({
+  ItemTile({
     Key? key,
     required this.item,
   }) : super(key: key);

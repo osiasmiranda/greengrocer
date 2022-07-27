@@ -2,8 +2,8 @@ import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:greengrocer/src/config/app_data.dart' as app_data;
 import 'package:greengrocer/src/config/custom_colors.dart';
-import 'components/category_title.dart';
-import 'components/item_title.dart';
+import 'components/category_tile.dart';
+import 'components/item_tile.dart';
 
 class HomeTab extends StatefulWidget {
   const HomeTab({Key? key}) : super(key: key);
@@ -107,7 +107,7 @@ class _HomeTabState extends State<HomeTab> {
             child: ListView.separated(
               scrollDirection: Axis.horizontal,
               itemBuilder: (_, index) {
-                return CategoryTitle(
+                return CategoryTile(
                   category: app_data.categories[index],
                   isSelected: app_data.categories[index] == selectedCategory,
                   onPressed: () {
@@ -134,7 +134,7 @@ class _HomeTabState extends State<HomeTab> {
               ),
               itemCount: app_data.items.length,
               itemBuilder: (_, index) {
-                return ItemTitle(
+                return ItemTile(
                   item: app_data.items[index],
                 );
               },

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../cart/cart_tab.dart';
 import '../home/home_tab.dart';
+import '../orders/orders_tab.dart';
 import '../profile/profile_tab.dart';
 
 class BaseScreen extends StatefulWidget {
@@ -54,11 +55,11 @@ class _BaseScreenState extends State<BaseScreen> {
       body: PageView(
         controller: pageController,
         physics: const NeverScrollableScrollPhysics(),
-        children: [
-          const HomeTab(),
-          const CartTab(),
-          Container(color: Colors.purple),
-          const ProfileTab(),
+        children: const [
+          HomeTab(),
+          CartTab(),
+          OrdersTab(),
+          ProfileTab(),
           // kTabPages[currentTabIndex],
         ],
       ),

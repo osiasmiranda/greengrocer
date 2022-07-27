@@ -4,7 +4,7 @@ import 'package:greengrocer/src/config/app_data.dart' as app_data;
 import '../../config/custom_colors.dart';
 import '../../model/cart_item_model.dart';
 import '../../services/utils_services.dart';
-import 'components/cart_title.dart';
+import 'components/cart_tile.dart';
 
 class CartTab extends StatefulWidget {
   const CartTab({Key? key}) : super(key: key);
@@ -45,7 +45,7 @@ class _CartTabState extends State<CartTab> {
               physics: const BouncingScrollPhysics(),
               itemCount: app_data.cartItems.length,
               itemBuilder: (_, index) {
-                return CartTitle(
+                return CartTile(
                   cartItem: app_data.cartItems[index],
                   remove: removeItemFromCart,
                 );
