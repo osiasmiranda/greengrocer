@@ -3,6 +3,7 @@ import 'package:greengrocer/src/model/order_model.dart';
 
 import '../../../model/cart_item_model.dart';
 import '../../../services/utils_services.dart';
+import 'order_status_widget.dart';
 
 class OrderTile extends StatelessWidget {
   final OrderModel order;
@@ -22,6 +23,9 @@ class OrderTile extends StatelessWidget {
       child: Theme(
         data: Theme.of(context).copyWith(dividerColor: Colors.transparent),
         child: ExpansionTile(
+          initiallyExpanded: order.status == 'pending_payment',
+          childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
+          expandedCrossAxisAlignment: CrossAxisAlignment.stretch,
           title: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -35,34 +39,80 @@ class OrderTile extends StatelessWidget {
               ),
             ],
           ),
-          childrenPadding: const EdgeInsets.fromLTRB(16, 0, 16, 16),
           children: [
-            SizedBox(
-              height: 150,
+            IntrinsicHeight(
               child: Row(
                 children: [
+                  //#Lista de Produtos
                   Expanded(
                     flex: 3,
-                    child: ListView(
-                      children: order.items.map(
-                        ((orderItem) {
-                          return _OrderItemWidget(
-                            utilsServices: utilsServices,
-                            orderItem: orderItem,
-                          );
-                        }),
-                      ).toList(),
+                    child: SizedBox(
+                      height: 150,
+                      child: ListView(
+                        physics: const BouncingScrollPhysics(),
+                        children: order.items.map(
+                          ((orderItem) {
+                            return _OrderItemWidget(
+                              utilsServices: utilsServices,
+                              orderItem: orderItem,
+                            );
+                          }),
+                        ).toList(),
+                      ),
                     ),
                   ),
+                  VerticalDivider(
+                    thickness: 1,
+                    color: Colors.grey.shade300,
+                    width: 8,
+                  ),
+                  //# Status do pedido
                   Expanded(
                     flex: 2,
-                    child: Container(
-                      color: Colors.blue,
+                    child: OrderStatusWidget(
+                      status: order.status,
+                      isOverdue: order.overdueDateTime.isBefore(DateTime.now()),
                     ),
-                  )
+                  ),
                 ],
               ),
-            )
+            ),
+            //#Total Pagamento
+            Text.rich(
+              TextSpan(
+                style: const TextStyle(fontSize: 20),
+                children: [
+                  const TextSpan(
+                    text: 'Total ',
+                    style: TextStyle(
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  TextSpan(
+                    text: utilsServices.priceToCurrency(order.total),
+                  ),
+                ],
+              ),
+            ),
+            //#Botão Pagamento
+
+            Visibility(
+              visible: order.status == 'pending_payment',
+              child: ElevatedButton.icon(
+                style: ElevatedButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.pix,
+                ),
+                label: const Text(
+                  'Ver QR Code Pix',
+                ),
+              ),
+            ),
           ],
         ),
       ),
@@ -100,9 +150,7 @@ class _OrderItemWidget extends StatelessWidget {
             ),
           ),
           Text(
-            utilsServices.priceToCurrency(
-              orderItem.totalPrice(),
-            ),
+            utilsServices.priceToCurrency(orderItem.totalPrice()),
           ),
         ],
       ),
