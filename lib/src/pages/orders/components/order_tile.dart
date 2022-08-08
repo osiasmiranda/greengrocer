@@ -3,6 +3,7 @@ import 'package:greengrocer/src/model/order_model.dart';
 
 import '../../../model/cart_item_model.dart';
 import '../../../services/utils_services.dart';
+import '../../widgets/common/payment_dialog.dart';
 import 'order_status_widget.dart';
 
 class OrderTile extends StatelessWidget {
@@ -104,7 +105,16 @@ class OrderTile extends StatelessWidget {
                     borderRadius: BorderRadius.circular(20),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (_) {
+                      return PaymentDialog(
+                        order: order,
+                      );
+                    },
+                  );
+                },
                 icon: const Icon(
                   Icons.pix,
                 ),
