@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:greengrocer/src/config/custom_colors.dart';
 import 'package:greengrocer/src/pages/auth/sign_up_screen.dart';
 import '../base/base_screen.dart';
+import '../widgets/common/app_name_widget.dart';
 import '../widgets/common/custom_text_field.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -24,30 +25,34 @@ class SignInScreen extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    //Nome do aplicativo
-                    Text.rich(
-                      TextSpan(
-                        style: const TextStyle(
-                          fontSize: 40,
-                        ),
-                        children: [
-                          const TextSpan(
-                            text: 'Green',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          TextSpan(
-                            text: 'grocer',
-                            style: TextStyle(
-                              color: CustomColors.customContrastColor,
-                              fontWeight: FontWeight.w500,
-                            ),
-                          ),
-                        ],
-                      ),
+                    //!Nome do aplicativo
+                    const AppNameWidget(
+                      textSize: 40,
+                      greenTitleColor: Colors.white,
                     ),
+                    // Text.rich(
+                    //   TextSpan(
+                    //     style: const TextStyle(
+                    //       fontSize: 40,
+                    //     ),
+                    //     children: [
+                    //       const TextSpan(
+                    //         text: 'Green',
+                    //         style: TextStyle(
+                    //           color: Colors.white,
+                    //           fontWeight: FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //       TextSpan(
+                    //         text: 'grocer',
+                    //         style: TextStyle(
+                    //           color: CustomColors.customContrastColor,
+                    //           fontWeight: FontWeight.w500,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
                     //Categorias
                     SizedBox(
                       height: 30,
