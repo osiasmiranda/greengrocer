@@ -1,10 +1,10 @@
 <h1 align="center">
-    <img width='120px' alt="filmesapp" title="#filmesapp" src="./assets/images/logo.png" />
+    <img width='120px' alt="filmesapp" title="#filmesapp" src="assets/app_images/app_icon.png" />
     
 </h1>
 <h1 align="center"> 
 	  
-  <img align="center" alt="Osias-Flutter" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg">Filmes_app 🚧 Concluído 🥳...👨‍🔧 🚧
+  <img align="center" alt="Osias-Flutter" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg">GreenGroce => Concluído 🥳...👨‍🔧 🚧
   <img align="center" alt="Osias-Dart" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg">
 </h1>
 
@@ -26,24 +26,22 @@
 
 ## 💻 Sobre o projeto
 
-<img width='30px' src="assets/images/logo.png"> Filmes_app- É uma aplicativo versátil que une as vantagens do Flutter e Dart com uma integração simples e poderosa usando **GetX** de ponta a ponta. Este projeto aborda como consumir uma api de filmes do TMDB, guardando de forma segura o token e Autênticação no **Firebase**.
-
-Projeto desenvolvido no treinamento **DART WEEK 4ª EDIÇÃO - Academia Do Flutter** oferecido pelo professor Rodrigo Rahman.
+<img width='30px' src="assets/app_images/app_icon.png"> GreenGrocer- é um aplicativo para aprendizado de desenvolvimento de interface com flutter.
+Projeto desenvolvido no treinamento **Startto.dev** oferecido pelo professor Daniel Ciolfi e equipe.
 
 ---
 
 ## 🛠 Tecnologias
 
-- [x] Flutter 2.5
+- [x] Flutter 3.0.5
 - [x] Dart
-- [x] Figma
-- [x] GetX:
-  - Gerência de Estado
-  - Gerênciamento de rotas
-  - Injeção de Dependência
-  - Consumindo Api com GetConnect
-  - GetDialog
-- [x] Firebase
+- [x] intl
+- [x] add_to_cart_animation
+- [x] flutter_launcher_icons
+- [x] fluttertoast
+- [x] mask_text_input_formatter
+- [x] qr_flutter
+- [x] shimmer
 - [x] Git
 - [x] Github
 
