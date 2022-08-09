@@ -1,10 +1,10 @@
 <h1 align="center">
-    <img width='120px' alt="filmesapp" title="#filmesapp" src="assets/app_images/app_icon.png" />
+    <img width='120px' alt="greengrocer" title="#greengrocer" src="assets/app_images/app_icon.png" />
     
 </h1>
 <h1 align="center"> 
 	  
-  <img align="center" alt="Osias-Flutter" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg">GreenGroce => Concluído 🥳...👨‍🔧 🚧
+  <img align="center" alt="Osias-Flutter" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/flutter/flutter-original.svg">GreenGrocer <=> Concluído 🥳..
   <img align="center" alt="Osias-Dart" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/dart/dart-original.svg">
 </h1>
 
@@ -47,15 +47,10 @@ Projeto desenvolvido no treinamento **Startto.dev** oferecido pelo professor Dan
 
 ---
 
-## 🎨 **Layout**
+## 🎨 **ScreenShot**
 
-O layout da aplicação está disponível no Figma:
-
-<a href="https://www.figma.com/file/NowpvYt64uNyNavKQFniRx/filmes_app?node-id=0%3A1" target="_blank">
-<img alt="filmesapp figma" src="https://img.shields.io/badge/Acessar%20Layout%20-Figma-%2304D361">
-</a>
-
-<img alt="filmesapp figma" src="./assets/filmes_app.gif" >
+O screenshot da aplicação:
+<img alt="ss1" src="assets/ss/1.png" >
 
 ---
 
