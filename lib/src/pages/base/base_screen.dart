@@ -45,10 +45,17 @@ class _BaseScreenState extends State<BaseScreen> {
       selectedItemColor: Colors.white,
       unselectedItemColor: Colors.white.withAlpha(100),
       onTap: (int index) {
-        setState(() {
-          currentTabIndex = index;
-          pageController.jumpToPage(index);
-        });
+        setState(
+          () {
+            currentTabIndex = index;
+            // pageController.jumpToPage(index);
+            pageController.animateToPage(
+              index,
+              duration: const Duration(milliseconds: 400),
+              curve: Curves.easeIn,
+            );
+          },
+        );
       },
     );
     return Scaffold(

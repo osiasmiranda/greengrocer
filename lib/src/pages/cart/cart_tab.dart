@@ -18,9 +18,13 @@ class _CartTabState extends State<CartTab> {
   final UtilsServices utilsServices = UtilsServices();
 
   void removeItemFromCart(CartItemModel cartItem) {
-    setState(() {
-      app_data.cartItems.remove(cartItem);
-    });
+    setState(
+      () {
+        app_data.cartItems.remove(cartItem);
+        utilsServices.showToast(
+            message: '${cartItem.item.itemName} removido(a) do carrinho');
+      },
+    );
   }
 
   double cartTotalPrice() {
@@ -106,6 +110,9 @@ class _CartTabState extends State<CartTab> {
                             );
                           },
                         );
+                      } else {
+                        utilsServices.showToast(
+                            message: 'Pedido não confirmado', isError: true);
                       }
                     },
                     child: const Text(
